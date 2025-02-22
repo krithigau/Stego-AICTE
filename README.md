@@ -19,9 +19,9 @@ With growing concerns over data security, traditional encryption methods may att
 4.  End Marker (~) for Extraction – Prevents unnecessary processing.
 
 ## Target Users
-1. Cybersecurity Enthusiasts – For secure communication.
-2. Researchers & Students – Learning steganography techniques.
-3. Journalists & Activists – Sending confidential messages discreetly.
+- **Cybersecurity Enthusiasts** – For secure communication.
+- **Researchers & Students** – Learning steganography techniques.
+- **Journalists & Activists** – Sending confidential messages discreetly.
 
 ## How It Works
 ### I. Encryption (Hiding a Message)
@@ -62,21 +62,21 @@ YOU ARE NOT AUTHORIZED
 ```
 
 ## Things to Avoid
-1. Using large messages – Ensure the message size doesn’t exceed the image capacity.
-2. Wrong passcode during decryption – If forgotten, the message cannot be recovered.
-3. Modifying the encrypted image – Any edits to encryptedImage.png may corrupt the hidden message.
-4. Using highly compressed images (JPEG) – Lossy compression may alter pixel values, affecting decryption.
+- **Using large messages** – Ensure the message size doesn’t exceed the image capacity.
+- **Wrong passcode during decryption** – If forgotten, the message cannot be recovered.
+- **Modifying the encrypted image** – Any edits to encryptedImage.png may corrupt the hidden message.
+- **Using highly compressed images (JPEG)** – Lossy compression may alter pixel values, affecting decryption.
 
 ## Future Enhancements
-- 🚀 Support for More Image Formats (PNG, BMP)
-- 🚀 Stronger Encryption (AES + Steganography)
-- 🚀 Web/Mobile App Integration for user-friendly access
+- Support for More Image Formats (PNG, BMP) 🚀
+- Stronger Encryption (AES + Steganography) 🚀
+- Web/Mobile App Integration for user-friendly access 🚀
 
-## Conclusion
+## 🎯 Conclusion
 This project offers a secure and discreet way to hide sensitive information in images. With passcode authentication and LSB encoding, it enhances covert data transmission while keeping the image visually unchanged.
 
-## License
+## 📜License
 This project is open-source and available under the MIT License.
 
-## Author
-Krithiga U
+## 👨‍💻 Author
+Developed by Krithiga U
