@@ -13,10 +13,10 @@ With growing concerns over data security, traditional encryption methods may att
    
 ## Key Features
 
-1.  Passcode Protection – Ensures only authorized users can decrypt the message.
-2.  Minimal Image Distortion – Uses Least Significant Bit (LSB) encoding for seamless data embedding.
-3.  Efficient & Lightweight – Works with standard images without significant storage overhead.
-4.  End Marker (~) for Extraction – Prevents unnecessary processing.
+-  **Passcode Protection** – Ensures only authorized users can decrypt the message.
+-  **Minimal Image Distortion** – Uses Least Significant Bit (LSB) encoding for seamless data embedding.
+-  **Efficient & Lightweight** – Works with standard images without significant storage overhead.
+- **End Marker (~) for Extraction** – Prevents unnecessary processing.
 
 ## Target Users
 - **Cybersecurity Enthusiasts** – For secure communication.
@@ -68,9 +68,9 @@ YOU ARE NOT AUTHORIZED
 - **Using highly compressed images (JPEG)** – Lossy compression may alter pixel values, affecting decryption.
 
 ## Future Enhancements
-- Support for More Image Formats (PNG, BMP) 🚀
-- Stronger Encryption (AES + Steganography) 🚀
-- Web/Mobile App Integration for user-friendly access 🚀
+- Support for More Image Formats (PNG, BMP) 
+- Stronger Encryption (AES + Steganography) 
+- Web/Mobile App Integration for user-friendly access 
 
 ## 🎯 Conclusion
 This project offers a secure and discreet way to hide sensitive information in images. With passcode authentication and LSB encoding, it enhances covert data transmission while keeping the image visually unchanged.
