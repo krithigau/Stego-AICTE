@@ -1,30 +1,48 @@
 import cv2
+import numpy as np
 
-def decrypt(image_path, password):
-    img = cv2.imread("Mee.jpg")  # Read the encrypted image
+def decrypt(image_path, passcode):
+    img = cv2.imread(image_path)
     if img is None:
         print("Error: Image not found!")
         return
 
-    c = {i: chr(i) for i in range(255)}
+    binary_msg = ""
+    found_end = False  # Flag to stop unnecessary iterations
 
-    n, m, z = 0, 0, 0
-    message = ""
+    for row in img:
+        for pixel in row:
+            for channel in range(3):  # Extract from R, G, B channels
+                binary_msg += str(pixel[channel] & 1)
 
-    user_password = input("Enter passcode for decryption: ")
-    if user_password != password:
+                # Stop early if we detect the '~' character (end of message)
+                if len(binary_msg) % 8 == 0:
+                    char = chr(int(binary_msg[-8:], 2))
+                    if char == "~":
+                        found_end = True
+                        break
+            if found_end:
+                break
+        if found_end:
+            break
+
+    # Convert binary to text
+    chars = [binary_msg[i:i+8] for i in range(0, len(binary_msg), 8)]
+    extracted_msg = "".join([chr(int(char, 2)) for char in chars])
+
+    # Extract actual message before '~' delimiter
+    if "~" in extracted_msg:
+        extracted_msg = extracted_msg[:extracted_msg.index("~")]
+
+    # Separate stored passcode and secret message
+    stored_passcode, secret_message = extracted_msg.split(":", 1)
+
+    if passcode == stored_passcode:
+        print("Decryption Successful! Secret Message:", secret_message)
+    else:
         print("YOU ARE NOT AUTHORIZED")
-        return
-
-    for _ in range(img.shape[0] * img.shape[1]):
-        message += c[img[n, m, z]]
-        n = (n + 1) % img.shape[0]
-        m = (m + 1) % img.shape[1]
-        z = (z + 1) % 3
-
-    print("Decrypted message:", message)
 
 if __name__ == "__main__":
     image_path = input("Enter the encrypted image path: ")
-    password = input("Enter the passcode: ")
-    decrypt(image_path, password)
+    passcode = input("Enter the passcode: ")
+    decrypt(image_path, passcode)
